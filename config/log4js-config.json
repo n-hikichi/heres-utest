@@ -1,0 +1,44 @@
+{
+  "appenders": {
+    "system": {
+      "type":     "dateFile",
+      "filename": "logs/system.log",
+      "pattern":  "-yyyy-MM-dd"
+    },
+    "access": {
+      "type":     "dateFile",
+      "filename": "logs/access.log",
+      "pattern":  "-yyyy-MM-dd"
+    },
+    "error": {
+      "type":     "dateFile",
+      "filename": "logs/error.log",
+      "pattern":  "-yyyy-MM-dd"
+    },
+    "console": {
+      "type": "console"
+    },
+    "stdout": {
+      "type": "stdout"
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": [ "access", "console", "stdout" ],
+      "level": "DEBUG"
+    },
+    "access": {
+      "appenders": [ "access", "console" ],
+      "level": "DEBUG"
+    },
+    "system": {
+      "appenders": [ "system", "console" ],
+      "level": "DEBUG"
+    },
+    "error": {
+      "appenders": [ "error", "console" ],
+      "level": "WARN"
+    }
+  }
+}
+
